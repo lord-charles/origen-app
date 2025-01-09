@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "Origen",
-    "slug": "Origen",
+    "name": "Innova",
+    "slug": "Innova",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/innova-icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,9 +13,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/innova-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.lordcharles.Innova"
     },
     "web": {
       "bundler": "metro",
@@ -24,10 +25,11 @@
     },
     "plugins": [
       "expo-router",
+      "react-native-edge-to-edge",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/innova-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
