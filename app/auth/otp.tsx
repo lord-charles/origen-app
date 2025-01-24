@@ -19,6 +19,7 @@ import { OtpInput } from "react-native-otp-entry";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import AuthService, { User } from "@/services/auth.service";
 import Toast from "react-native-toast-message";
+import { StatusBar } from "expo-status-bar";
 
 export default function OTPScreen() {
   const colorScheme = useColorScheme();
@@ -150,6 +151,8 @@ export default function OTPScreen() {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.background }}>
+      <StatusBar style="auto" />
+
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         style={{ flex: 1 }}

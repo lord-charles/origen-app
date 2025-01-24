@@ -235,7 +235,7 @@ export default function DashboardScreen() {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor="#1a237e" translucent={true} style="light" />
+      <StatusBar backgroundColor="#1a237e" style="auto" />
       <ScrollView
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}

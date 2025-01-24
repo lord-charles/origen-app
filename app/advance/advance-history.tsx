@@ -24,7 +24,6 @@ import { LinearGradient } from "expo-linear-gradient";
 import { FlatListProps } from "react-native/Libraries/Lists/FlatList";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { createShimmerPlaceholder } from "react-native-shimmer-placeholder";
-import { LoaderScreen } from "react-native-ui-lib";
 import { router } from "expo-router";
 import advancesService, { SalaryAdvance } from "@/services/advances.service";
 import { Colors } from "@/constants/Colors";
@@ -288,12 +287,7 @@ export default function SalaryAdvanceHistoryScreen() {
   if (state.isLoading) {
     return (
       <View style={styles.loadingContainer}>
-        <LoaderScreen
-          message="Loading salary advance history..."
-          backgroundColor="#1a237e"
-          color="#ffffff"
-          messageStyle={{ color: "#ffffff" }}
-        />
+        <ActivityIndicator size="large" color="#fff" />
       </View>
     );
   }

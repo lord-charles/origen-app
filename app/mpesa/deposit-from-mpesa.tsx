@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -9,7 +9,6 @@ import {
   Platform,
   Keyboard,
   ActivityIndicator,
-  Alert,
   ScrollView,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
@@ -33,8 +32,6 @@ export default function MpesaTransferScreen() {
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertTitle, setAlertTitle] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
-
-  const amountInputRef = useRef<TextInput>(null);
 
   useEffect(() => {
     loadUserData();
@@ -210,7 +207,6 @@ export default function MpesaTransferScreen() {
               >
                 <Text style={styles.currency}>KSh</Text>
                 <TextInput
-                  ref={amountInputRef}
                   style={styles.input}
                   value={amount}
                   onChangeText={(text) => {

@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   StatusBar,
+  ActivityIndicator,
 } from "react-native";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { router } from "expo-router";
@@ -16,7 +17,6 @@ import AdvanceTable from "./advance-table";
 import AdvanceCalendar from "./advance-calendar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PerfectedModernCustomAlert from "../components/CustomAlert";
-import { LoaderScreen } from "react-native-ui-lib";
 import CustomAlert from "@/components/CustomAlert";
 
 const Tab = createBottomTabNavigator();
@@ -118,12 +118,7 @@ export default function AvailableAdvanceScreen() {
   if (state.isLoading) {
     return (
       <View style={styles.loadingContainer}>
-        <LoaderScreen
-          message="Loading salary advance..."
-          backgroundColor="#1a237e"
-          color="#ffffff"
-          messageStyle={{ color: "#ffffff" }}
-        />
+        <ActivityIndicator size="large" color="#fff" />
       </View>
     );
   }

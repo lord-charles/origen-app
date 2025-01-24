@@ -21,6 +21,7 @@ import { router } from "expo-router";
 import Animated, { FadeInDown } from "react-native-reanimated";
 import AuthService, { User } from "@/services/auth.service";
 import Toast from "react-native-toast-message";
+import { StatusBar } from "expo-status-bar";
 
 const MIN_ID_LENGTH = 7;
 const MAX_ID_LENGTH = 8;
@@ -134,10 +135,12 @@ export default function WelcomeScreen() {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.background }}>
+      <StatusBar style="auto" />
+
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         style={{ flex: 1 }}
-        keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 30}
+        keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 60}
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <ScrollView

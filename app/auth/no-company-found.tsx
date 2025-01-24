@@ -12,7 +12,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 import { Text } from "react-native-paper";
 import { router } from "expo-router";
-import Animated, { FadeInDown, FadeInUp } from "react-native-reanimated";
+import Animated, { FadeInDown } from "react-native-reanimated";
+import { StatusBar } from "expo-status-bar";
 
 export default function WelcomeScreen() {
   const colorScheme = useColorScheme();
@@ -20,6 +21,8 @@ export default function WelcomeScreen() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar style="auto" />
+
       <ScrollView
         contentContainerStyle={[
           styles.container,

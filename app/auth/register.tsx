@@ -8,13 +8,14 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+  SafeAreaView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 import { Text, TextInput } from "react-native-paper";
 import { router } from "expo-router";
 import Animated, { FadeInDown } from "react-native-reanimated";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 
 export default function ContactFormScreen() {
   const colorScheme = useColorScheme();
@@ -33,18 +34,21 @@ export default function ContactFormScreen() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar style="auto" />
+
       <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
         style={{ flex: 1 }}
-        keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 20}
       >
         <ScrollView
           contentContainerStyle={[
             styles.container,
             { backgroundColor: theme.background },
+            { flexGrow: 1 },
           ]}
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
+          automaticallyAdjustKeyboardInsets={true}
         >
           {/* Header Section */}
           <View style={styles.header}>
@@ -84,9 +88,9 @@ export default function ContactFormScreen() {
             />
           </View>
 
-          {/* Form Section - Removed absolute positioning */}
+          {/* Form Section - Updated spacing */}
           <View
-            className="gap-4 mt-4"
+            className="gap-4 absolute bottom-[100px] left-6 right-6"
             style={{ backgroundColor: theme.background }}
           >
             <Animated.View entering={FadeInDown.delay(300)}>
@@ -188,10 +192,11 @@ export default function ContactFormScreen() {
             </Animated.View>
           </View>
 
-          {/* Footer Section - Removed absolute positioning */}
+          {/* Footer Section - Updated button */}
           <Animated.View
             entering={FadeInDown.delay(1200)}
-            style={[styles.footerContainer]}
+            style={styles.footerContainer}
+            className="absolute bottom-[10px] left-6 right-4"
           >
             <TouchableOpacity
               style={[styles.nextButton, { backgroundColor: theme.primary }]}
@@ -212,15 +217,15 @@ export default function ContactFormScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
+    flex: 1,
     paddingHorizontal: 24,
     paddingTop: 16,
-    paddingBottom: Platform.OS === "ios" ? 40 : 20,
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 15,
+    marginTop: 20,
   },
   backButton: {
     padding: 8,
@@ -262,7 +267,6 @@ const styles = StyleSheet.create({
   footerContainer: {
     paddingVertical: 20,
     width: "100%",
-    marginTop: "auto",
   },
   nextButton: {
     width: "100%",

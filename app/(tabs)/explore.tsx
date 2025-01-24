@@ -6,7 +6,6 @@ import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { IconSymbol } from "@/components/ui/IconSymbol";
-import { Button } from "react-native-ui-lib";
 
 export default function TabTwoScreen() {
   return (
@@ -24,9 +23,6 @@ export default function TabTwoScreen() {
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Explore</ThemedText>
       </ThemedView>
-
-      <Button link text70 orange30 label="Sign Up" marginT-20 />
-      <Button text70 white background-orange30 label="Login" />
       <ThemedText>
         This app includes example code to help you get started.
       </ThemedText>
