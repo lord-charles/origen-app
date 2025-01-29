@@ -332,7 +332,7 @@ export default function AdvanceApplicationModal({
 
             <View style={styles.summarySection}>
               <View style={styles.summaryRow}>
-                <Text style={styles.summaryLabel}>Interest Rate:</Text>
+                <Text style={styles.summaryLabel}>Application Fee:</Text>
                 <Text style={styles.summaryValue}>{interestRate}%</Text>
               </View>
               <View style={styles.summaryRow}>
